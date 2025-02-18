@@ -1,0 +1,11 @@
+{
+    "display_name": "ConnectPeripherals",
+    "loading_order": 9,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "sanshanjianke",
+    "version": "0.0.1",
+    "homePage": "https://github.com/sanshanjianke/SillyTavern_ConnectPeripherals"
+}
