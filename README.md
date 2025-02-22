@@ -5,3 +5,5 @@ But is testting now.
 简单来说就是把跳蛋接入到酒馆啦！
 
 目前正在测试，未来会添加更多的设备驱动。
+
+![(https://github.com/sanshanjianke/SillyTavern_ConnectPeripherals/blob/main/image.png)](image.png "演示图片")
