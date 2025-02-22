@@ -1,33 +1,4 @@
-# SillyTavern Extension Example
-
-*Provide a brief description of how your extension works, what problem it aims to solve.*
-
-## Features
-
-*Describe some of the main selling points of your extension.*
-
-## Installation and Usage
-
-### Installation
-
-*In most cases, this should just be using ST's inbuilt extension installer.* 
-
-### Usage
-
-*Explain how to use this extension.*
-
-## Prerequisites
-
-*Specify the version of ST necessary here.*
-
-## Support and Contributions
-
-*Where should someone ask for support?*
-
-*Consider including your own contact info for help/questions.*
-
-*How can people help add to this extension?*
-
-## License
-
-*Be cool, use an open source license.*
+A demo of vibrator peripherals connect to SillyTavern。
+But is testting now.
+简单来说就是把跳蛋接入到酒馆啦！
+目前正在测试，未来会添加更多的设备驱动。
