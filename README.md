@@ -7,5 +7,5 @@ But is testting now.
 目前正在测试，未来会添加更多的设备驱动。
 
 ![(https://github.com/sanshanjianke/SillyTavern_ConnectPeripherals/blob/main/image3.jpg)](image3.jpg "演示图片")
-![(https://github.com/sanshanjianke/SillyTavern_ConnectPeripherals/blob/main/image2.png)](image2.png "演示图片")
+![(https://github.com/sanshanjianke/SillyTavern_ConnectPeripherals/blob/main/image2.jpg)](image2.jpg "演示图片")
 ![(https://github.com/sanshanjianke/SillyTavern_ConnectPeripherals/blob/main/image.png)](image.png "演示图片")
