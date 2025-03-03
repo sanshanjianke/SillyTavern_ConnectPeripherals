@@ -56,30 +56,6 @@ function extractDeviceContent(str) {
 
 let characteristic;
 
-function wtf1(){
-	let device = navigator.bluetooth.requestDevice({
-	filters: [ 
-		{ namePrefix: 'why' } 
-	],
-	optionalServices: [ "b408e1a0-3d8a-11ed-b878-0242ac120002" ]
-  });
-  return device;
-}
-
-function wtf2(device){
-	let server= device.gatt.connect();
-	return server;
-}
-
-function wtf3(server){
-	let service = server.getPrimaryService("b408e1a0-3d8a-11ed-b878-0242ac120002");
-	return service;
-}
-
-function wtf4(service){
-	let characteristic = service.getCharacteristic("de045162-3d97-11ed-b878-0242ac120002");
-	return characteristic;
-}
 
 function send_value(characteristic,value){
 	characteristic.writeValue(
@@ -87,6 +63,24 @@ function send_value(characteristic,value){
   );
 	
 }
+
+async function connectBluetoothDevice() {
+  try {
+      const device = await navigator.bluetooth.requestDevice({
+          filters: [{ namePrefix: 'why' }],
+          optionalServices: ["b408e1a0-3d8a-11ed-b878-0242ac120002"]
+      });
+      
+      const server = await device.gatt.connect();
+      const service = await server.getPrimaryService("b408e1a0-3d8a-11ed-b878-0242ac120002");
+      return await service.getCharacteristic("de045162-3d97-11ed-b878-0242ac120002");
+  } catch (error) {
+      console.error('蓝牙连接失败:', error);
+      throw error; // 抛出错误给上层处理
+  }
+}
+
+
 
 async function send_while(characteristic){
 	// 获取整个消息文本
@@ -115,15 +109,17 @@ async function onButtonClick() {
   // 在这里你想做什么就做什么
   // 让我们用选中的设置创建一个弹出窗口
   
-  
   // 连接蓝牙
-  let device=await wtf1();
-  let server=await wtf2(device);
-  let service=await wtf3(server);
-  let characteristic=await wtf4(service);
+  try {
+    const characteristic = await connectBluetoothDevice();
+
+    // 进入消息循环检测1秒一测
+    setInterval(send_while, 1000, characteristic);
+    // toastr.success("蓝牙设备已连接");
+  } catch (error) {
+    // toastr.error("蓝牙连接失败");
+  }
   
-  
-  setInterval(send_while, 1000,characteristic);
   
  // toastr.info(
   //  `The checkbox is ${extension_settings[extensionName].example_setting ? "checked" : "not checked"}`,
