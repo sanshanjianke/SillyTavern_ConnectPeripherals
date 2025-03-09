@@ -222,7 +222,7 @@ async function send_while(characteristic){
 
       console.log(number);
       if("one_power" in obj || "two_power" in obj){
-        funt_outbreak=1; // 用于退出funt函数
+        funt_outbreak=1; // 用于退出funt函数，必须放在funt前面，不然发了之后就又被异步还没终止的funt改了。
         await send_value(characteristic,number);
         floor_flag=context.chat.length; 
         // 用于表明这个楼层已经发送过一次消息了。这个必须放到这里，不然ai消息还没发完标志就改了。
@@ -231,7 +231,7 @@ async function send_while(characteristic){
       }
       // 功能定义
       if("funt" in obj){
-        funt_outbreak=1; // 用于退出funt函数
+        funt_outbreak=1; // 用于退出funt函数，必须放在funt前面，不然发了之后就又被异步还没终止的funt改了。
         funt(characteristic,obj.funt);
         floor_flag=context.chat.length; 
         return 0;
